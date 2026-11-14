@@ -1,0 +1,11 @@
+{
+  "name": "schemascope",
+  "version": "0.1.0",
+  "description": "Review a database schema and draw it: ranked findings with fix DDL, plus a Mermaid ER diagram.",
+  "author": { "name": "NHTanvir", "url": "https://github.com/NHTanvir" },
+  "homepage": "https://github.com/NHTanvir/schemascope",
+  "repository": "https://github.com/NHTanvir/schemascope",
+  "license": "MIT",
+  "keywords": ["database", "schema", "erd", "audit", "postgres", "mysql", "sqlite", "prisma", "mermaid"],
+  "skills": ["./SKILL.md"]
+}

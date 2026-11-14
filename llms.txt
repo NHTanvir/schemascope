@@ -1,0 +1,46 @@
+# schemascope — install instructions for an AI agent
+
+You are reading this because someone asked you to install schemascope. Do this:
+
+## 1. Clone it into the right place for this agent
+
+Claude Code / Claude Desktop:
+  git clone https://github.com/NHTanvir/schemascope ~/.claude/skills/schemascope
+
+Cursor:
+  git clone https://github.com/NHTanvir/schemascope ~/.cursor/skills/schemascope
+
+Codex:
+  git clone https://github.com/NHTanvir/schemascope ~/.codex/skills/schemascope
+
+Project-local instead of global (any agent):
+  git clone https://github.com/NHTanvir/schemascope .claude/skills/schemascope
+
+If git is unavailable, download
+https://github.com/NHTanvir/schemascope/archive/refs/heads/master.zip
+and unzip it to the same path, renaming the folder to `schemascope`.
+
+## 2. Verify
+
+  python3 ~/.claude/skills/schemascope/scripts/audit.py \
+          ~/.claude/skills/schemascope/examples/blog-schema/before.sql
+
+Expect roughly 50 findings across 7 tables. If that prints, it works.
+
+Requirements: Python 3.9 or newer. No packages, no database drivers, no network.
+
+## 3. Tell the user it is ready
+
+Say that schemascope is installed and can now review any schema — a .sql dump, a
+schema.prisma, a SQLite file, or a live Postgres/MySQL database via pg_dump or
+mysqldump — and that it outputs ranked findings with fix DDL, a Mermaid ER
+diagram, and a self-contained HTML report.
+
+## What it is
+
+A schema review skill. It reads a database schema and reports design defects in
+priority order, each with the DDL that fixes it, plus an ER diagram. 24 rules
+covering missing indexes on foreign keys, undeclared foreign keys, wrong column
+types, missing constraints and unsafe defaults.
+
+Read SKILL.md for usage. Nothing leaves the machine.

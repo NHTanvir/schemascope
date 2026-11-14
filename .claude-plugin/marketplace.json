@@ -1,0 +1,11 @@
+{
+  "name": "schemascope",
+  "owner": { "name": "NHTanvir", "url": "https://github.com/NHTanvir" },
+  "plugins": [
+    {
+      "name": "schemascope",
+      "source": "./",
+      "description": "Point your coding agent at a database. Get an ER diagram worth sharing, and a ranked list of what is wrong with it, each finding with the DDL that fixes it."
+    }
+  ]
+}
