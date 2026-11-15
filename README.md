@@ -200,6 +200,21 @@ means adding one function in `audit.py`; adding an input means one parser in
 python3 -m unittest discover -s tests   # 44 tests, stdlib only
 ```
 
+## Related
+
+Two more tools in the same family — an agent skill, no dependencies, an audit
+that draws what it found:
+
+- **[statescope](https://github.com/NHTanvir/statescope)** — the state machine
+  your code *actually* implements, drawn, with every illegal path cited to the
+  line that allows it. Where this tool reports `enum_as_free_text`, that one
+  reads the code writing to the column and finds the paths nobody meant to
+  allow: `refunded -> pending`, writes with no guard, transitions that run
+  backwards.
+- **[gatescope](https://github.com/NHTanvir/gatescope)** — every route resolved
+  to the guards that actually protect it, printed as a route-by-role matrix, so
+  the endpoint nothing is guarding is visible at a glance.
+
 ## Contributing
 
 New rules are the most useful contribution: open an issue with the schema that
